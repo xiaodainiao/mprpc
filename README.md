@@ -1,9 +1,9 @@
 # mprpc
-基于C++ module库 Protobuf  Zookeeper 实现的Rpc框架
+基于C++ muduo库 Protobuf  Zookeeper 实现的Rpc框架
 
 ## 编译：
 
-./autobuild.sh
+`./autobuild.sh`
 
 
 
@@ -11,11 +11,20 @@
 
 bin目录下：
 
-./provider -i test.conf  (启动Rpc提供者)
+`./provider -i test.conf ` (启动Rpc提供者)
 
-./consumer -i test.conf(启动Rpc调用者)
+`./consumer -i test.conf`(启动Rpc调用者)
 
 启动zookeeper，发现有rpc节点注册上
+
+
+
+# 技术选型
+
+- Protobuf
+- Zookeeper
+- C++
+- Module库
 
 
 
@@ -96,3 +105,5 @@ bin目录下：
 - `test`：测试用例
 
 ## 架构设计
+
+![image-20230224165314848](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20230224165314848.png)
