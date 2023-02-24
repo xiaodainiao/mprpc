@@ -1,0 +1,65 @@
+syntax = "proto3";
+
+package fixbug;
+
+
+//封装错误码和错误消息
+message ResultCode
+{
+    int32 errcode = 1;       // int32 errcode = 1;    string errmsg = 2; 重复代码，定义成类
+    string errmsg = 2;
+}
+
+//数据  列表   映射表
+//定义登录请求消息类型
+message LoginRequest
+{
+    bytes name = 1;
+    bytes pwd = 2;
+}
+
+
+//定义登录响应消息类型
+message LoginResponse
+{
+    ResultCode result = 1;
+    bool success = 3;
+}
+
+//获取好友列表请求，注意不是一个，因此用列表
+message GetFriendListsRequest
+{
+    uint32 userid = 1;
+}
+
+
+message User
+{
+    bytes name = 1;
+    uint32 age = 2;
+    enum Sex
+    {
+        MAX = 0;
+        WOMAN = 1;
+    }
+    Sex sex = 3;
+}
+
+//响应好友列表
+message GetFriendListsResponse
+{
+    ResultCode result = 1;
+    repeated User friend_list = 2;  //有好多好友，因此需要把这个字段重复，意味着生成的文件中，有friend_list这个列表
+    //定义列表类型
+}
+
+//定义下面的选项，表示生成service服务类和rpc方法描述，默认不生成
+option cc_generic_services = true;
+
+//protobuf没有rpc功能，它只做rpc调用的序列化和反序列化
+//在protobuf里面怎么定义描述rpc方法的类型 -service
+service UserServiceRPC
+{
+    rpc Login(LoginRequest) returns(LoginResponse); //定义了一个Login rpc的方法，注意protobuf不支持rpc功能，只是rpc方法的描述，通过描述就可以做RPC请求的序列化和反序列化
+    rpc GetFriendLists(GetFriendListsRequest) returns(GetFriendListsResponse);
+}

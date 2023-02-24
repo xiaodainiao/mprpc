@@ -1,0 +1,13 @@
+10:46:18 =>[info]service_name:FriendServiceRpc
+10:46:18 =>[info]method_name:GetFriendsList
+10:46:47 =>[info]service_name:FriendServiceRpc
+10:46:47 =>[info]method_name:GetFriendsList
+11:10:17 =>[info]service_name:FriendServiceRpc
+11:10:17 =>[info]method_name:GetFriendsList
+11:11:40 =>[info]service_name:FriendServiceRpc
+11:11:40 =>[info]method_name:GetFriendsList
+11:11:59 =>[info]service_name:FriendServiceRpc
+11:11:59 =>[info]method_name:GetFriendsList
+11:25:0 =>[info]service_name:UserServiceRpc
+11:25:0 =>[info]method_name:Login
+11:25:0 =>[info]method_name:Register
