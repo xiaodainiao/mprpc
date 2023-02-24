@@ -105,5 +105,4 @@ bin目录下：
 - `test`：测试用例
 
 ## 架构设计
-
-![image-20230224165314848](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20230224165314848.png)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/56dd1b36f20b4b81ad78172f593a41a3.png)
